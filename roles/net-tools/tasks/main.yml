@@ -1,0 +1,6 @@
+- name: Install net-tools
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - net-tools
