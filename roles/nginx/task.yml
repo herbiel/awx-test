@@ -1,6 +1,9 @@
-- name: install epel
-  yum: name=epel-release
-- name: install nginx
-  yum: name=nginx
+- name: Install nginx
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - epel-release
+    - nginx
 - name: start nginx
   service: name=nginx state=started
